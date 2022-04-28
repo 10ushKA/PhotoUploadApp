@@ -2,10 +2,9 @@ package by.niitzi.byshylo.entity;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.math.BigInteger;
 import java.sql.Blob;
 
-public class User {
+public class UserPhoto {
     String firstName;
     String lastName;
     Blob photo;
@@ -13,20 +12,20 @@ public class User {
     ByteArrayInputStream ph;
 
 
-    public User(){}
+    public UserPhoto(){}
 
-    public User(String firstName, String lastName, Blob photo) {
+    public UserPhoto(String firstName, String lastName, Blob photo) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.photo = photo;
     }
-    public User(String firstName, String lastName, InputStream file ) {
+    public UserPhoto(String firstName, String lastName, InputStream file ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.file = file;
     }
 
-    public User(String firstName, String lastName, ByteArrayInputStream ph ) {
+    public UserPhoto(String firstName, String lastName, ByteArrayInputStream ph ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ph = ph;

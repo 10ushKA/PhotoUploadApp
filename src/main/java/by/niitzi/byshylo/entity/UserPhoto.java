@@ -3,25 +3,32 @@ package by.niitzi.byshylo.entity;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.sql.Blob;
+import java.sql.Timestamp;
 
 public class UserPhoto {
+    String id;
     String firstName;
     String lastName;
+    String photoName;
     Blob photo;
+    Timestamp addedDate;
     InputStream file;
     ByteArrayInputStream ph;
 
 
     public UserPhoto(){}
 
-    public UserPhoto(String firstName, String lastName, Blob photo) {
+    public UserPhoto(String id, String firstName, String lastName, String photoName, Timestamp addedDate) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.photo = photo;
+        this.photoName = photoName;
+        this.addedDate = addedDate;
     }
-    public UserPhoto(String firstName, String lastName, InputStream file ) {
+    public UserPhoto(String firstName, String lastName, String photoName, InputStream file ) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.photoName = photoName;
         this.file = file;
     }
 
@@ -29,6 +36,14 @@ public class UserPhoto {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ph = ph;
+    }
+
+    public String getPhotoName() {
+        return photoName;
+    }
+
+    public void setPhotoName(String photoName) {
+        this.photoName = photoName;
     }
 
     public ByteArrayInputStream getPh() {
@@ -69,5 +84,21 @@ public class UserPhoto {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Timestamp getAddedDate() {
+        return addedDate;
+    }
+
+    public void setAddedDate(Timestamp addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
